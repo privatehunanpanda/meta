@@ -1,151 +1,202 @@
-add projects here
+an experiment in subtree for back end and front end projects 
 
-➜  ~ ls -a
-.                  .bashrc  Desktop     .gnome         .multirust       .npm               .profile                   Templates  .zcompdump                   .zsh-update
-..                 bin      Documents   .gnupg         Music            .oh-my-zsh         Public                     Videos     .zcompdump-ubuntugnome4-5.2
-.angular-cli.json  .cache   Downloads   .ICEauthority  .nano            package-lock.json  .rustup                    .viminfo   .zprofile
-.bash_history      .cargo   .gconf      .local         nightly.desktop  Pictures           .ssh                       .vscode    .zsh_history
-.bash_logout       .config  .gitconfig  .mozilla       node_modules     .pki               .sudo_as_admin_successful  .yarn      .zshrc
-➜  ~ python3 --version
-Python 3.6.3
-➜  ~ cd Documents/testsubtree       
-cd: no such file or directory: Documents/testsubtree
-➜  ~ cd Documents/testsubtrees
-➜  testsubtrees ls -a
-.  ..  dist  myfrontend
-➜  testsubtrees mkdir mybackend
-➜  testsubtrees cd mybackend 
-➜  mybackend ls -a
-.  ..
-➜  mybackend code .
-➜  mybackend git add .;git commit -S;git push -u origin --all;
-fatal: Not a git repository (or any of the parent directories): .git
-fatal: Not a git repository (or any of the parent directories): .git
-fatal: Not a git repository (or any of the parent directories): .git
-➜  mybackend git init
-Initialized empty Git repository in /home/panda/Documents/testsubtrees/mybackend/.git/
-➜  mybackend git:(master) ✗ git add .;git commit -S;git push -u origin --all;
-[master (root-commit) 584c688] add gitignore
- 1 file changed, 2 insertions(+)
- create mode 100644 .gitignore
-fatal: 'origin' does not appear to be a git repository
-fatal: Could not read from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.
-➜  mybackend git:(master) git add .;git commit -S;                         
+➜  ~ cd /home/panda/Documents/testsubtrees/myfrontend/;git add .;git commit -S;git push -u origin --all;ng build --aot true --target production --environment prod;rsync -av dist /home/panda/Documents/testsubtrees;cd /home/panda/Documents/testsubtrees/dist;git add .;git commit -S;git push -u origin --all;
 On branch master
+Your branch is up-to-date with 'origin/master'.
+
 nothing to commit, working tree clean
-➜  mybackend git:(master) pip --version
-zsh: command not found: pip
-➜  mybackend git:(master) python3 -m venv venv
+Branch master set up to track remote branch master from origin.
+Everything up-to-date
+Date: 2017-10-22T16:38:08.927Z                                                          
+Hash: 4c7a5a50d2ea5e7bb8d6
+Time: 9413ms
+chunk {0} polyfills.14173651b8ae6311a4b5.bundle.js (polyfills) 61.4 kB {4} [initial] [rendered]
+chunk {1} main.eeea714052f89ca56c76.bundle.js (main) 3.19 kB {3} [initial] [rendered]
+chunk {2} styles.d41d8cd98f00b204e980.bundle.css (styles) 0 bytes {4} [initial] [rendered]
+chunk {3} vendor.3ec61cf6f4565d4400d6.bundle.js (vendor) 215 kB [initial] [rendered]
+chunk {4} inline.a22cf2dffd606d1b176c.bundle.js (inline) 1.45 kB [entry] [rendered]
+sending incremental file list
+dist/
+dist/3rdpartylicenses.txt
+dist/favicon.ico
+dist/index.html
+dist/inline.a22cf2dffd606d1b176c.bundle.js
+dist/main.eeea714052f89ca56c76.bundle.js
+dist/polyfills.14173651b8ae6311a4b5.bundle.js
+dist/styles.d41d8cd98f00b204e980.bundle.css
+dist/vendor.3ec61cf6f4565d4400d6.bundle.js
+
+sent 291,535 bytes  received 172 bytes  583,414.00 bytes/sec
+total size is 290,742  speedup is 1.00
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+nothing to commit, working tree clean
+Branch master set up to track remote branch master from origin.
+Everything up-to-date
+➜  dist git:(master) git config --global commit.gpgsign true
+➜  dist git:(master) gpg --list-secret-keys
+/home/panda/.gnupg/pubring.kbx
+------------------------------
+sec   rsa4096 2017-10-21 [SC]
+      7B7F0ED2B9379E7B52458808780BC5E23A6110A3
+uid           [ultimate] Private Hunan Panda <kddc@protonmail.com>
+ssb   rsa4096 2017-10-21 [E]
+
+➜  dist git:(master) git config --global user.signingkey 7B7F0ED2B9379E7B52458808780BC5E23A6110A3
+➜  dist git:(master) cd /home/panda/Documents/testsubtrees/myfrontend/;git add .;git commit -S;git push -u origin --all;ng build --aot true --target production --environment prod;rsync -av dist /home/panda/Documents/testsubtrees;cd /home/panda/Documents/testsubtrees/dist;git add .;git commit -S;git push -u origin --all;
+[master f6a1fba] add a background color
+ 2 files changed, 18 insertions(+), 13 deletions(-)
+ rewrite src/app/app.component.html (91%)
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 1.21 KiB | 1.21 MiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To github.com:privatehunanpanda/01angular.git
+   32f3690..f6a1fba  master -> master
+Branch master set up to track remote branch master from origin.
+Date: 2017-10-22T16:43:16.469Z                                                          
+Hash: 8606781cba313aaa9895
+Time: 7170ms
+chunk {0} polyfills.14173651b8ae6311a4b5.bundle.js (polyfills) 61.4 kB {4} [initial] [rendered]
+chunk {1} main.c79178e055d5e66a6026.bundle.js (main) 3.38 kB {3} [initial] [rendered]
+chunk {2} styles.d41d8cd98f00b204e980.bundle.css (styles) 0 bytes {4} [initial] [rendered]
+chunk {3} vendor.3ec61cf6f4565d4400d6.bundle.js (vendor) 215 kB [initial] [rendered]
+chunk {4} inline.6811a8ae54e0c8418390.bundle.js (inline) 1.45 kB [entry] [rendered]
+sending incremental file list
+dist/
+dist/3rdpartylicenses.txt
+dist/favicon.ico
+dist/index.html
+dist/inline.6811a8ae54e0c8418390.bundle.js
+dist/main.c79178e055d5e66a6026.bundle.js
+dist/polyfills.14173651b8ae6311a4b5.bundle.js
+dist/styles.d41d8cd98f00b204e980.bundle.css
+dist/vendor.3ec61cf6f4565d4400d6.bundle.js
+
+sent 291,724 bytes  received 172 bytes  583,792.00 bytes/sec
+total size is 290,933  speedup is 1.00
+[master 6d41c65] add a background color
+ 3 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 inline.6811a8ae54e0c8418390.bundle.js
+ create mode 100644 main.c79178e055d5e66a6026.bundle.js
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 3.36 KiB | 3.36 MiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:privatehunanpanda/privatehunanpanda.github.io.git
+   0b84c5e..6d41c65  master -> master
+Branch master set up to track remote branch master from origin.
+➜  dist git:(master) cd /home/panda/Documents/testsubtrees/myfrontend/;git add .;git commit -S;git push -u origin --all;ng build --aot true --target production --environment prod;rsync -av dist /home/panda/Documents/testsubtrees;cd /home/panda/Documents/testsubtrees/dist;git add .;git commit -S;git push -u origin --all;
+[master 101d4a4] text align center for article
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 1.11 KiB | 1.11 MiB/s, done.
+Total 5 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To github.com:privatehunanpanda/01angular.git
+   f6a1fba..101d4a4  master -> master
+Branch master set up to track remote branch master from origin.
+Date: 2017-10-22T16:45:23.173Z                                                          
+Hash: ac6bddb33bf81b6918cf
+Time: 7246ms
+chunk {0} polyfills.14173651b8ae6311a4b5.bundle.js (polyfills) 61.4 kB {4} [initial] [rendered]
+chunk {1} main.97e4eb7349a1b6728c12.bundle.js (main) 3.4 kB {3} [initial] [rendered]
+chunk {2} styles.d41d8cd98f00b204e980.bundle.css (styles) 0 bytes {4} [initial] [rendered]
+chunk {3} vendor.3ec61cf6f4565d4400d6.bundle.js (vendor) 215 kB [initial] [rendered]
+chunk {4} inline.ff7d5b3975b57f5c972c.bundle.js (inline) 1.45 kB [entry] [rendered]
+sending incremental file list
+dist/
+dist/3rdpartylicenses.txt
+dist/favicon.ico
+dist/index.html
+dist/inline.ff7d5b3975b57f5c972c.bundle.js
+dist/main.97e4eb7349a1b6728c12.bundle.js
+dist/polyfills.14173651b8ae6311a4b5.bundle.js
+dist/styles.d41d8cd98f00b204e980.bundle.css
+dist/vendor.3ec61cf6f4565d4400d6.bundle.js
+
+sent 291,735 bytes  received 172 bytes  583,814.00 bytes/sec
+total size is 290,951  speedup is 1.00
+[master 4460bd8] text align center the article
+ 3 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 inline.ff7d5b3975b57f5c972c.bundle.js
+ create mode 100644 main.97e4eb7349a1b6728c12.bundle.js
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 3.39 KiB | 3.39 MiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:privatehunanpanda/privatehunanpanda.github.io.git
+   6d41c65..4460bd8  master -> master
+Branch master set up to track remote branch master from origin.
+➜  dist git:(master) cd .. 
+➜  testsubtrees cd .. 
+➜  Documents cd testsubtrees 
+➜  testsubtrees cd myfrontend 
+➜  myfrontend git:(master) ls -a
+.   .angular-cli.json  e2e            .git        karma.conf.js  package.json        README.md  tsconfig.json  yarn.lock
+..  dist               .editorconfig  .gitignore  node_modules   protractor.conf.js  src        tslint.json
+➜  myfrontend git:(master) ls -a
+.   .angular-cli.json  e2e            .git        karma.conf.js  package.json        README.md  tsconfig.json  yarn.lock
+..  dist               .editorconfig  .gitignore  node_modules   protractor.conf.js  src        tslint.json
+➜  myfrontend git:(master) cd .. 
+➜  testsubtrees mybackend 
+➜  mybackend git:(master) code .
 ➜  mybackend git:(master) source venv/bin/activate
-(venv) ➜  mybackend git:(master) ls -a
-.  ..  .git  .gitignore  venv
-(venv) ➜  mybackend git:(master) ls -a
-.  ..  .git  .gitignore  venv
-(venv) ➜  mybackend git:(master) pip --version
-pip 9.0.1 from /home/panda/Documents/testsubtrees/mybackend/venv/lib/python3.6/site-packages (python 3.6)
-(venv) ➜  mybackend git:(master) pip install --upgrade * 
-Collecting venv
-  Could not find a version that satisfies the requirement venv (from versions: )
-No matching distribution found for venv
-(venv) ➜  mybackend git:(master) pip install --upgrade pip pip3 setuptools
-Requirement already up-to-date: pip in ./venv/lib/python3.6/site-packages
-Collecting pip3
-  Could not find a version that satisfies the requirement pip3 (from versions: )
-No matching distribution found for pip3
-(venv) ➜  mybackend git:(master) pip install --upgrade pip setuptools 
-Requirement already up-to-date: pip in ./venv/lib/python3.6/site-packages
-Collecting setuptools
-  Using cached setuptools-36.6.0-py2.py3-none-any.whl
-Installing collected packages: setuptools
-  Found existing installation: setuptools 32.3.1
-    Uninstalling setuptools-32.3.1:
-      Successfully uninstalled setuptools-32.3.1
-Successfully installed setuptools-36.6.0
-(venv) ➜  mybackend git:(master) pip install hug --upgrade
-Collecting hug
-  Downloading hug-2.3.2.tar.gz (65kB)
-    100% |████████████████████████████████| 71kB 1.9MB/s 
-Collecting falcon==1.3.0 (from hug)
-  Downloading falcon-1.3.0-py2.py3-none-any.whl (150kB)
-    100% |████████████████████████████████| 153kB 3.9MB/s 
-Collecting requests (from hug)
-  Downloading requests-2.18.4-py2.py3-none-any.whl (88kB)
-    100% |████████████████████████████████| 92kB 4.0MB/s 
-Collecting python-mimeparse>=1.5.2 (from falcon==1.3.0->hug)
-  Downloading python_mimeparse-1.6.0-py2.py3-none-any.whl
-Collecting six>=1.4.0 (from falcon==1.3.0->hug)
-  Using cached six-1.11.0-py2.py3-none-any.whl
-Collecting idna<2.7,>=2.5 (from requests->hug)
-  Downloading idna-2.6-py2.py3-none-any.whl (56kB)
-    100% |████████████████████████████████| 61kB 5.1MB/s 
-Collecting urllib3<1.23,>=1.21.1 (from requests->hug)
-  Downloading urllib3-1.22-py2.py3-none-any.whl (132kB)
-    100% |████████████████████████████████| 133kB 2.7MB/s 
-Collecting certifi>=2017.4.17 (from requests->hug)
-  Downloading certifi-2017.7.27.1-py2.py3-none-any.whl (349kB)
-    100% |████████████████████████████████| 358kB 2.3MB/s 
-Collecting chardet<3.1.0,>=3.0.2 (from requests->hug)
-  Downloading chardet-3.0.4-py2.py3-none-any.whl (133kB)
-    100% |████████████████████████████████| 143kB 3.2MB/s 
-Building wheels for collected packages: hug
-  Running setup.py bdist_wheel for hug ... error
-  Complete output from command /home/panda/Documents/testsubtrees/mybackend/venv/bin/python3 -u -c "import setuptools, tokenize;__file__='/tmp/pip-build-mzi3yytx/hug/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" bdist_wheel -d /tmp/tmpfnokhdb4pip-wheel- --python-tag cp36:
-  usage: -c [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
-     or: -c --help [cmd1 cmd2 ...]
-     or: -c --help-commands
-     or: -c cmd --help
-  
-  error: invalid command 'bdist_wheel'
-  
-  ----------------------------------------
-  Failed building wheel for hug
-  Running setup.py clean for hug
-Failed to build hug
-Installing collected packages: python-mimeparse, six, falcon, idna, urllib3, certifi, chardet, requests, hug
-  Running setup.py install for hug ... done
-Successfully installed certifi-2017.7.27.1 chardet-3.0.4 falcon-1.3.0 hug-2.3.2 idna-2.6 python-mimeparse-1.6.0 requests-2.18.4 six-1.11.0 urllib3-1.22
-(venv) ➜  mybackend git:(master) pip install hug --upgrade
-Requirement already up-to-date: hug in ./venv/lib/python3.6/site-packages
-Requirement already up-to-date: falcon==1.3.0 in ./venv/lib/python3.6/site-packages (from hug)
-Requirement already up-to-date: requests in ./venv/lib/python3.6/site-packages (from hug)
-Requirement already up-to-date: six>=1.4.0 in ./venv/lib/python3.6/site-packages (from falcon==1.3.0->hug)
-Requirement already up-to-date: python-mimeparse>=1.5.2 in ./venv/lib/python3.6/site-packages (from falcon==1.3.0->hug)
-Requirement already up-to-date: certifi>=2017.4.17 in ./venv/lib/python3.6/site-packages (from requests->hug)
-Requirement already up-to-date: idna<2.7,>=2.5 in ./venv/lib/python3.6/site-packages (from requests->hug)
-Requirement already up-to-date: urllib3<1.23,>=1.21.1 in ./venv/lib/python3.6/site-packages (from requests->hug)
-Requirement already up-to-date: chardet<3.1.0,>=3.0.2 in ./venv/lib/python3.6/site-packages (from requests->hug)
-(venv) ➜  mybackend git:(master) code .
-(venv) ➜  mybackend git:(master) pip install --upgrade autopep8
-Collecting autopep8
-  Downloading autopep8-1.3.3.tar.gz (108kB)
-    100% |████████████████████████████████| 112kB 2.7MB/s 
-Collecting pycodestyle>=2.3 (from autopep8)
-  Downloading pycodestyle-2.3.1-py2.py3-none-any.whl (45kB)
-    100% |████████████████████████████████| 51kB 4.7MB/s 
-Building wheels for collected packages: autopep8
-  Running setup.py bdist_wheel for autopep8 ... error
-  Complete output from command /home/panda/Documents/testsubtrees/mybackend/venv/bin/python3 -u -c "import setuptools, tokenize;__file__='/tmp/pip-build-yltzr4ho/autopep8/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" bdist_wheel -d /tmp/tmpdfpurrdhpip-wheel- --python-tag cp36:
-  usage: -c [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
-     or: -c --help [cmd1 cmd2 ...]
-     or: -c --help-commands
-     or: -c cmd --help
-  
-  error: invalid command 'bdist_wheel'
-  
-  ----------------------------------------
-  Failed building wheel for autopep8
-  Running setup.py clean for autopep8
-Failed to build autopep8
-Installing collected packages: pycodestyle, autopep8
-  Running setup.py install for autopep8 ... done
-Successfully installed autopep8-1.3.3 pycodestyle-2.3.1
-(venv) ➜  mybackend git:(master) ✗ autopep8 --in-place api.py 
-(venv) ➜  mybackend git:(master) ✗ pip freeze >> requirements.txt                                                    
-(venv) ➜  mybackend git:(master) ✗ python api.py 
+(venv) ➜  mybackend git:(master) ✗ code .                               
+(venv) ➜  mybackend git:(master) ✗ hug -f api
+Traceback (most recent call last):
+  File "/home/panda/Documents/testsubtrees/mybackend/venv/bin/hug", line 11, in <module>
+    load_entry_point('hug==2.3.2', 'console_scripts', 'hug')()
+  File "/home/panda/Documents/testsubtrees/mybackend/venv/lib/python3.6/site-packages/hug/interface.py", line 485, in __call__
+    result = self.interface(**pass_to_function)
+  File "/home/panda/Documents/testsubtrees/mybackend/venv/lib/python3.6/site-packages/hug/interface.py", line 99, in __call__
+    return __hug_internal_self._function(*args, **kwargs)
+  File "/home/panda/Documents/testsubtrees/mybackend/venv/lib/python3.6/site-packages/hug/development_runner.py", line 58, in hug
+    api_module = importlib.machinery.SourceFileLoader(file.split(".")[0], file).load_module()
+  File "<frozen importlib._bootstrap_external>", line 399, in _check_name_wrapper
+  File "<frozen importlib._bootstrap_external>", line 823, in load_module
+  File "<frozen importlib._bootstrap_external>", line 682, in load_module
+  File "<frozen importlib._bootstrap>", line 265, in _load_module_shim
+  File "<frozen importlib._bootstrap>", line 684, in _load
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 674, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 780, in get_code
+  File "<frozen importlib._bootstrap_external>", line 832, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: 'api'
 (venv) ➜  mybackend git:(master) ✗ hug -f api.py 
+Traceback (most recent call last):
+  File "/home/panda/Documents/testsubtrees/mybackend/venv/bin/hug", line 11, in <module>
+    load_entry_point('hug==2.3.2', 'console_scripts', 'hug')()
+  File "/home/panda/Documents/testsubtrees/mybackend/venv/lib/python3.6/site-packages/hug/interface.py", line 485, in __call__
+    result = self.interface(**pass_to_function)
+  File "/home/panda/Documents/testsubtrees/mybackend/venv/lib/python3.6/site-packages/hug/interface.py", line 99, in __call__
+    return __hug_internal_self._function(*args, **kwargs)
+  File "/home/panda/Documents/testsubtrees/mybackend/venv/lib/python3.6/site-packages/hug/development_runner.py", line 58, in hug
+    api_module = importlib.machinery.SourceFileLoader(file.split(".")[0], file).load_module()
+  File "<frozen importlib._bootstrap_external>", line 399, in _check_name_wrapper
+  File "<frozen importlib._bootstrap_external>", line 823, in load_module
+  File "<frozen importlib._bootstrap_external>", line 682, in load_module
+  File "<frozen importlib._bootstrap>", line 265, in _load_module_shim
+  File "<frozen importlib._bootstrap>", line 684, in _load
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 674, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 781, in get_code
+  File "<frozen importlib._bootstrap_external>", line 741, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "api.py", line 15
+    return "Happy birthday, friend")
+                                   ^
+SyntaxError: invalid syntax
+(venv) ➜  mybackend git:(master) ✗ hug -f api.py
 
 /#######################################################################\
           `.----``..-------..``.----.
@@ -170,133 +221,66 @@ Successfully installed autopep8-1.3.3 pycodestyle-2.3.1
 
 
 Serving on port 8000...
-127.0.0.1 - - [22/Oct/2017 11:56:26] "GET / HTTP/1.1" 404 935
-127.0.0.1 - - [22/Oct/2017 11:56:26] "GET /favicon.ico HTTP/1.1" 404 935
-127.0.0.1 - - [22/Oct/2017 11:56:41] "GET /happy_birthday HTTP/1.1" 400 62
-127.0.0.1 - - [22/Oct/2017 11:56:55] "GET /happy_birthday?name=kushal&age=23 HTTP/1.1" 200 26
-^C%                                                                                                                                                                                      (venv) ➜  mybackend git:(master) ✗ python api_test.py
-(venv) ➜  mybackend git:(master) ✗ git remote add origin git@github.com:privatehunanpanda/02hug.git
-(venv) ➜  mybackend git:(master) ✗ git add .;git commit -S;git push -u origin --all;                    
-Aborting commit due to empty commit message.
-oCounting objects: 3, done.
-Writing objects: 100% (3/3), 880 bytes | 880.00 KiB/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To github.com:privatehunanpanda/02hug.git
- * [new branch]      master -> master
-Branch master set up to track remote branch master from origin.
-(venv) ➜  mybackend git:(master) ✗ code .
-(venv) ➜  mybackend git:(master) ✗ git add .;git commit -S;git push -u origin --all;
-[master 58659c9] add code so I can ask questions
- 4 files changed, 39 insertions(+)
- create mode 100644 api.py
- create mode 100644 api_test.py
- create mode 100644 requirements.txt
-Counting objects: 6, done.
+
+> Reloading due to file change: api.py
+Serving on port 8000...
+
+> Reloading due to file change: api.py
+Serving on port 8000...
+127.0.0.1 - - [22/Oct/2017 12:50:00] "GET /happy_birthday?name=kushal&age=23 HTTP/1.1" 200 26
+127.0.0.1 - - [22/Oct/2017 12:50:02] "GET /happy_birthday?name=kushal&age=23 HTTP/1.1" 200 26
+127.0.0.1 - - [22/Oct/2017 12:50:04] "GET /happy_birthday HTTP/1.1" 200 35
+^C%                                                                                                                                                                                      (venv) ➜  mybackend git:(master) ✗ git add api.py;git commit;git push -u origin --all;
+[master eae5f79] add a default parameter for name
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Counting objects: 3, done.
 Delta compression using up to 4 threads.
-Compressing objects: 100% (5/5), done.
-Writing objects: 100% (6/6), 1.60 KiB | 1.60 MiB/s, done.
-Total 6 (delta 0), reused 0 (delta 0)
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 961 bytes | 961.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To github.com:privatehunanpanda/02hug.git
-   584c688..58659c9  master -> master
+   58659c9..eae5f79  master -> master
 Branch master set up to track remote branch master from origin.
-(venv) ➜  mybackend git:(master) code .
-(venv) ➜  mybackend git:(master) python api_test.py                                              
-Traceback (most recent call last):
-  File "api_test.py", line 14, in <module>
-    tests_happy_birthday()
-  File "api_test.py", line 10, in tests_happy_birthday
-    assert response.status == HTTP_200
-NameError: name 'HTTP_200' is not defined
-(venv) ➜  mybackend git:(master) ✗ git reset --hard 
-HEAD is now at 58659c9 add code so I can ask questions
-(venv) ➜  mybackend git:(master) code .      
-(venv) ➜  mybackend git:(master) cd ..                    
+(venv) ➜  mybackend git:(master) cd ..     
 (venv) ➜  testsubtrees cd .. 
 (venv) ➜  Documents cd subtrees 
-(venv) ➜  subtrees git init
-Initialized empty Git repository in /home/panda/Documents/subtrees/.git/
-(venv) ➜  subtrees git:(master) git subtree add --prefix 01angular git@github.com:privatehunanpanda/01angular.git master
-fatal: ambiguous argument 'HEAD': unknown revision or path not in the working tree.
-Use '--' to separate paths from revisions, like this:
-'git <command> [<revision>...] -- [<file>...]'
-Working tree has modifications.  Cannot add.
-(venv) ➜  subtrees git:(master) git status
-On branch master
-
-No commits yet
-
-nothing to commit (create/copy files and use "git add" to track)
-(venv) ➜  subtrees git:(master) vim README.md
-(venv) ➜  subtrees git:(master) ✗ git add README.md; git commit -S;
-[master (root-commit) a690cf9] add readme file
- 1 file changed, 1 insertion(+)
- create mode 100644 README.md
-(venv) ➜  subtrees git:(master) git subtree add --prefix 01angular git@github.com:privatehunanpanda/01angular.git master
-git fetch git@github.com:privatehunanpanda/01angular.git master
-warning: no common commits
-remote: Counting objects: 65, done.
-remote: Compressing objects: 100% (49/49), done.
-remote: Total 65 (delta 24), reused 55 (delta 14), pack-reused 0
-Unpacking objects: 100% (65/65), done.
-From github.com:privatehunanpanda/01angular
- * branch            master     -> FETCH_HEAD
-Added dir '01angular'
-(venv) ➜  subtrees git:(master) git subtree add --prefix 02 hug git@github.com:privatehunanpanda/02hug.git master       
-error: parameters were 'hug git@github.com:privatehunanpanda/02hug.git master'
-Provide either a commit or a repository and commit.
-(venv) ➜  subtrees git:(master) git subtree add --prefix 02hug git@github.com:privatehunanpanda/02hug.git master 
-git fetch git@github.com:privatehunanpanda/02hug.git master
-warning: no common commits
-remote: Counting objects: 9, done.
-remote: Compressing objects: 100% (6/6), done.
-remote: Total 9 (delta 0), reused 9 (delta 0), pack-reused 0
-Unpacking objects: 100% (9/9), done.
-From github.com:privatehunanpanda/02hug
- * branch            master     -> FETCH_HEAD
-Added dir '02hug'
-(venv) ➜  subtrees git:(master) git status
-On branch master
-nothing to commit, working tree clean
-(venv) ➜  subtrees git:(master) git remote add origin git@github.com:privatehunanpanda/meta.git
-(venv) ➜  subtrees git:(master) git push -u origin --all
-Counting objects: 81, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (74/74), done.
-Writing objects: 100% (81/81), 75.24 KiB | 2.69 MiB/s, done.
-Total 81 (delta 23), reused 0 (delta 0)
-remote: Resolving deltas: 100% (23/23), done.
-To github.com:privatehunanpanda/meta.git
- * [new branch]      master -> master
-Branch master set up to track remote branch master from origin.
-(venv) ➜  subtrees git:(master) git remote add -f 01angular git@github.com:privatehunanpanda/01angular.git       
-Updating 01angular
-remote: Counting objects: 5, done.
+(venv) ➜  subtrees git:(master) git remote add -f 02hug git@github.com:privatehunanpanda/02hug.git 
+Updating 02hug
+remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (1/1), done.
-remote: Total 5 (delta 3), reused 5 (delta 3), pack-reused 0
-Unpacking objects: 100% (5/5), done.
-From github.com:privatehunanpanda/01angular
- * [new branch]      master     -> 01angular/master
-(venv) ➜  subtrees git:(master) git fetch 01angular master
-From github.com:privatehunanpanda/01angular
- * branch            master     -> FETCH_HEAD
-(venv) ➜  subtrees git:(master) git subtree pulll --prefix 01angular 01angular master
+remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:privatehunanpanda/02hug
+ * [new branch]      master     -> 02hug/master
+(venv) ➜  subtrees git:(master) git subtree pulll --prefix 01angular 01angular master           
 Unknown command 'pulll'
 (venv) ➜  subtrees git:(master) git subtree pull --prefix 01angular 01angular master 
+remote: Counting objects: 11, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 11 (delta 7), reused 11 (delta 7), pack-reused 0
+Unpacking objects: 100% (11/11), done.
 From github.com:privatehunanpanda/01angular
  * branch            master     -> FETCH_HEAD
+   32f3690..101d4a4  master     -> 01angular/master
 Merge made by the 'recursive' strategy.
- 01angular/src/app/app.component.css | 3 +++
- 1 file changed, 3 insertions(+)
+ 01angular/src/app/app.component.css  |  6 +++++-
+ 01angular/src/app/app.component.html | 24 +++++++++++++-----------
+ 2 files changed, 18 insertions(+), 12 deletions(-)
+(venv) ➜  subtrees git:(master) git subtree pull --prefix 02hug 02hug master        
+From github.com:privatehunanpanda/02hug
+ * branch            master     -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ 02hug/api.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 (venv) ➜  subtrees git:(master) git push -u origin --all
-Counting objects: 7, done.
+Counting objects: 18, done.
 Delta compression using up to 4 threads.
-Compressing objects: 100% (6/6), done.
-Writing objects: 100% (7/7), 1.72 KiB | 1.72 MiB/s, done.
-Total 7 (delta 2), reused 0 (delta 0)
-remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+Compressing objects: 100% (18/18), done.
+Writing objects: 100% (18/18), 5.51 KiB | 1.83 MiB/s, done.
+Total 18 (delta 7), reused 0 (delta 0)
+remote: Resolving deltas: 100% (7/7), completed with 5 local objects.
 To github.com:privatehunanpanda/meta.git
-   b891ff9..8e3491d  master -> master
+   9a25128..d5477df  master -> master
 Branch master set up to track remote branch master from origin.
-(venv) ➜  subtrees git:(master) 
-
-
+(venv) ➜  subtrees git:(master)  
