@@ -1,3 +1,7 @@
 h1 {
-    border: dashed #3F51B5
+    border: dashed #3F51B5;
+}
+article {
+    background-color: #90A4AE;
+    text-align: center;
 }
